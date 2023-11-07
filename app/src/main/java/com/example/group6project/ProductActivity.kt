@@ -2,7 +2,6 @@ package com.example.group6project
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -51,7 +50,7 @@ class ProductActivity : AppCompatActivity() {
                 "Dominos",
                 R.drawable.img4,
                 "$99.99",
-                "This is my first Demo Product. I hope you will like!. if you like it please share it with your friends and Happy Pizza Day from Me!"
+                "This is my forth Demo Product. I hope you will like!. if you like it please share it with your friends and Happy Pizza Day from Me!"
             )
         )
         val productAdapter = ProductAdapter(pizzaList, this)
