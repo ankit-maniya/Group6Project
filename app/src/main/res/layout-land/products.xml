@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5sp">
+
+        <TextView
+            android:id="@+id/products"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:paddingStart="10sp"
+            android:paddingEnd="10sp"
+            android:text="@string/productscreen_title"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnCart"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/products"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/cart_text"
+            android:backgroundTint="@color/primary"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_products"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout" />
+
+</RelativeLayout>

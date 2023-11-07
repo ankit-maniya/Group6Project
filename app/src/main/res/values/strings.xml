@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Group 6 Project</string>
+    <string name="view_pizzas">View Pizzas</string>
+    <string name="slog1">Top #1 Fastest Delivery Food For You!</string>
+    <string name="slog2">Order food and get delivery in the fastest time in the town!</string>
+    <string name="spiffy_logo">spiffy logo</string>
+    <string name="productscreen_title">Choose what you want to eat</string>
+    <string name="cart_text">Cart</string>
+    <string name="product_demo_image">Product Demo Image</string>
+    <string name="demo_seller_name">Demo Seller Name</string>
+    <string name="seller_name">Seller Name</string>
+    <string name="price">Price</string>
+    <string name="demo_price">$20</string>
+    <string name="description">Description</string>
+    <string name="demo_description">This is my first Demo Product. I hope you will like!. if you like it please share it with your friends and Happy Pizza Day from Me!</string>
+    <string name="pizza_name">Name</string>
+    <string name="demo_cheeze_type">Cheeze Pizza</string>
+    <string name="pizza_description">Pizza Description</string>
+    <string name="btn_add_to_cart">Add To Cart</string>
+    <string name="btn_checkout">Checkout</string>
+    <string name="cart_screen_label">Current Carts</string>
+    <string name="back">Back</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="one">1</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="demo_total_payable_amounta">1200$</string>
+    <string name="submit">Submit</string>
+</resources>
