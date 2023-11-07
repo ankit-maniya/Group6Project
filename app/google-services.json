@@ -1,14 +1,14 @@
 {
   "project_info": {
-    "project_number": "461742678966",
-    "firebase_url": "https://group6project-53031-default-rtdb.firebaseio.com",
-    "project_id": "group6project-53031",
-    "storage_bucket": "group6project-53031.appspot.com"
+    "project_number": "161086245588",
+    "firebase_url": "https://group6project-af438-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "group6project-af438",
+    "storage_bucket": "group6project-af438.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:461742678966:android:c008c5465f09e35390d717",
+        "mobilesdk_app_id": "1:161086245588:android:aa9e318c4f43a18713c941",
         "android_client_info": {
           "package_name": "com.example.group6project"
         }
@@ -16,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAdEX6N1J_RCm5VZwyWUbn1ztjZe65G-Ik"
+          "current_key": "AIzaSyDKUmNco3sRj7akk_Lk5-OZUjnJHmUEnA0"
         }
       ],
       "services": {

@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(
                 Intent(
                     this,
-                    ProductActivity::class.java
+                    LogInActivity::class.java
                 )
             )
         }

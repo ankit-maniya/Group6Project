@@ -26,4 +26,11 @@
     <string name="total_amount">Total Amount</string>
     <string name="demo_total_payable_amounta">1200$</string>
     <string name="submit">Submit</string>
+    <string name="enter_email_id">Enter Email Id</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="re_enter_password">Re-Enter Password</string>
+    <string name="signup">SignUp</string>
+    <string name="login">LogIn</string>
+    <string name="already_signup_login_now">Already Signup! Login Now!</string>
+    <string name="signup_here">Signup Here!</string>
 </resources>
