@@ -12,7 +12,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.database.FirebaseDatabase
 
 class ProductActivity : AppCompatActivity() {
-    private var adapter: PizzaDataAdaptor? =  null;
+    private var adapter: PizzaDataAdaptor? =  null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         FirebaseApp.initializeApp(this)

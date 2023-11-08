@@ -35,6 +35,9 @@ class LogInActivity : AppCompatActivity() {
                         if (it.isSuccessful) {
                             Toast.makeText(this, "User Fetched successfully!", Toast.LENGTH_SHORT)
                                 .show()
+
+                            UserSessionManager.saveCurrentUserEmail()
+
                             startActivity(
                                 Intent(
                                     this,

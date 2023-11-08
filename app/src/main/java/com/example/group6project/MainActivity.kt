@@ -3,7 +3,6 @@ package com.example.group6project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
@@ -23,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         topAnimation = AnimationUtils.loadAnimation(this, R.anim.animation_top)
         bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.animation_bottom)
-        val btnViewProducts = findViewById<Button>(R.id.btnViewButton)
+        val btnViewProducts = this.findViewById<Button>(R.id.btnViewButton)
         btnViewProducts.setOnClickListener {
             startActivity(
                 Intent(
@@ -37,13 +36,16 @@ class MainActivity : AppCompatActivity() {
         imageView = findViewById(R.id.imageView)
         textView = findViewById(R.id.textView)
         textView2 = findViewById(R.id.textView2)
-        btn = findViewById(R.id.btnViewButton)
+        btn = this.findViewById(R.id.btnViewButton)
 
         // load animation
         imageView?.setAnimation(topAnimation)
         textView?.setAnimation(topAnimation)
         textView2?.setAnimation(topAnimation)
         btn?.setAnimation(bottomAnimation)
+
+        // Initialize SessionManager
+        UserSessionManager.init(this)
     }
 
 

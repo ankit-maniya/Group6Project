@@ -1,11 +1,10 @@
 package com.example.group6project
 
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class ProductDetailActivity : AppCompatActivity(){
@@ -26,14 +25,18 @@ class ProductDetailActivity : AppCompatActivity(){
         sellerNameView.text = sellerName
         productImageView.setImageResource(productImage)
         descriptionView.text = description
-        priceView.text = pPrice + "$"
+        priceView.text = pPrice
         val btnAddToCart = findViewById<Button>(R.id.addToCart)
         btnAddToCart.setOnClickListener {
             if (CartActivity.checkProductExists(title)) {
+                Toast.makeText(this, "Product is Already added!", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
             if (title != null) {
                 if (pPrice != null) {
+                    Toast.makeText(this, "Product added to Cart!", Toast.LENGTH_SHORT)
+                        .show()
                     CartActivity.addCartProduct(title, pPrice)
                 }
             }

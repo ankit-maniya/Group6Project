@@ -40,6 +40,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingStart="3sp"
+                android:padding="10dp"
+                android:layout_margin="10dp"
                 android:paddingEnd="3sp">
 
                 <TextView
@@ -106,6 +108,7 @@
 
             <Button
                 android:id="@+id/addToCart"
+                android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="5dp"

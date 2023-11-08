@@ -33,4 +33,15 @@
     <string name="login">LogIn</string>
     <string name="already_signup_login_now">Already Signup! Login Now!</string>
     <string name="signup_here">Signup Here!</string>
+    <string name="enter_card_number">Enter Card Number</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_expiry_date">Enter Expiry Date</string>
+    <string name="enter_credit_name">Enter Credit Name</string>
+    <string name="add_credit_card_details">Add Credit Card Details</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="add_user_details">Add User Details</string>
+    <string name="total_payment">Total Payment</string>
+    <string name="textview">TextView</string>
 </resources>
