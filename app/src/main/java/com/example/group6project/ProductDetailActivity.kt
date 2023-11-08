@@ -12,11 +12,11 @@ class ProductDetailActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_details)
-        val title = intent.getStringExtra("title")
-        val sellerName = intent.getStringExtra("sellerName")
-        val productImage = intent.getIntExtra("productImage", R.drawable.spiffy_logo)
-        val description = intent.getStringExtra("description")
-        val price = intent.getStringExtra("price")
+        val title = intent.getStringExtra("dPName")
+        val sellerName = intent.getStringExtra("dPSeller")
+        val productImage = intent.getIntExtra("dPImg", R.drawable.img1)
+        val description = intent.getStringExtra("dPDesc")
+        val pPrice = intent.getStringExtra("dPPrice")
         val titleView = findViewById<TextView>(R.id.name1)
         val sellerNameView = findViewById<TextView>(R.id.sellerName1)
         val productImageView = findViewById<ImageView>(R.id.productImage1)
@@ -26,15 +26,15 @@ class ProductDetailActivity : AppCompatActivity(){
         sellerNameView.text = sellerName
         productImageView.setImageResource(productImage)
         descriptionView.text = description
-        priceView.text = price
+        priceView.text = pPrice + "$"
         val btnAddToCart = findViewById<Button>(R.id.addToCart)
-        btnAddToCart.setOnClickListener { v: View? ->
+        btnAddToCart.setOnClickListener {
             if (CartActivity.checkProductExists(title)) {
                 return@setOnClickListener
             }
             if (title != null) {
-                if (price != null) {
-                    CartActivity.addCartProduct(title, price)
+                if (pPrice != null) {
+                    CartActivity.addCartProduct(title, pPrice)
                 }
             }
         }

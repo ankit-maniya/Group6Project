@@ -4,6 +4,6 @@ class Pizza (
     var title: String,
     var sellerName: String,
     var imageSrc: Int,
-    var price: String,
+    var pPrice: String,
     var description: String
 )

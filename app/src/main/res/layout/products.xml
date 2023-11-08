@@ -1,37 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_primary"
-    android:orientation="horizontal">
+    tools:context=".ProductActivity"
+    android:orientation="horizontal"
+    android:id="@+id/demo">
 
     <RelativeLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5sp">
-
         <TextView
             android:id="@+id/products"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:paddingStart="10sp"
             android:paddingEnd="10sp"
             android:text="@string/productscreen_title"
             android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:layout_conversion_absoluteHeight="50dp"
+            tools:layout_editor_absoluteY="5dp"
+            tools:layout_editor_absoluteX="5dp"
+            tools:layout_conversion_absoluteWidth="306dp" />
 
         <Button
             android:id="@+id/btnCart"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_toRightOf="@+id/products"
+            android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/cart_text"
             android:backgroundTint="@color/primary"
-            android:visibility="visible" />
+            android:visibility="visible"
+            tools:layout_conversion_absoluteHeight="50dp"
+            tools:layout_editor_absoluteY="5dp"
+            tools:layout_editor_absoluteX="311dp"
+            tools:layout_conversion_absoluteWidth="88dp" />
 
     </RelativeLayout>
 
@@ -39,6 +49,11 @@
         android:id="@+id/recycler_view_products"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/layout" />
+        tools:listitem="@layout/product_details_card"
+        tools:layout_conversion_absoluteHeight="672dp"
+        tools:layout_editor_absoluteY="60dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_conversion_absoluteWidth="411dp"
+        android:layout_below="@id/layout"/>
 
 </RelativeLayout>

@@ -17,10 +17,10 @@ class CheckoutActivity:AppCompatActivity() {
         val displayTotal = intent.getStringExtra("totalAmt")
         totalAmt.text = displayTotal
         val btnSubmit = findViewById<Button>(R.id.buttonSubmit)
-        btnSubmit.setOnClickListener { v: View -> onClick(v) }
+        btnSubmit.setOnClickListener { v: View -> onClick() }
     }
 
-    private fun onClick(v: View) {
+    private fun onClick() {
         resetCartProductArray()
         resetTotalPrice()
         startActivity(Intent(this@CheckoutActivity, ProductActivity::class.java))

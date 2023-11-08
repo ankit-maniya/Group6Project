@@ -7,54 +7,27 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.firebase.ui.database.FirebaseRecyclerOptions
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.FirebaseDatabase
 
 class ProductActivity : AppCompatActivity() {
+    private var adapter: PizzaDataAdaptor? =  null;
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        FirebaseApp.initializeApp(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.products)
-        val recyclView = findViewById<RecyclerView>(R.id.recycler_view_products)
-        recyclView.layoutManager = LinearLayoutManager(this)
 
-        // Initialize your PizzaList with sample data (e.g., 4 different Pizzas)
-        val pizzaList: MutableList<Pizza> = ArrayList()
-        pizzaList.add(
-            Pizza(
-                "Pizza 1",
-                "Dominos",
-                R.drawable.img1,
-                "$49.99",
-                "This is my first Demo Product. I hope you will like!. if you like it please share it with your friends and Happy Pizza Day from Me!"
-            )
-        )
-        pizzaList.add(
-            Pizza(
-                "Pizza 2",
-                "Dominos",
-                R.drawable.img2,
-                "$59.99",
-                "This is my first Demo Product. I hope you will like!. if you like it please share it with your friends and Happy Pizza Day from Me!"
-            )
-        )
-        pizzaList.add(
-            Pizza(
-                "Pizza 3",
-                "Dominos",
-                R.drawable.img3,
-                "$100.99",
-                "This is my first Demo Product. I hope you will like!. if you like it please share it with your friends and Happy Pizza Day from Me!"
-            )
-        )
-        pizzaList.add(
-            Pizza(
-                "Pizza 4",
-                "Dominos",
-                R.drawable.img4,
-                "$99.99",
-                "This is my forth Demo Product. I hope you will like!. if you like it please share it with your friends and Happy Pizza Day from Me!"
-            )
-        )
-        val productAdapter = ProductAdapter(pizzaList, this)
-        recyclView.adapter = productAdapter
+        val query = FirebaseDatabase.getInstance().reference.child("products")
+        val options = FirebaseRecyclerOptions.Builder<PizzaData>().setQuery(query,PizzaData::class.java).build()
+        adapter = PizzaDataAdaptor(this, options)
+
+        val rView : RecyclerView = findViewById(R.id.recycler_view_products)
+        rView.layoutManager = LinearLayoutManager(this)
+        rView.adapter = adapter
+
         val btnViewCart = findViewById<Button>(R.id.btnCart)
         btnViewCart.setOnClickListener { v: View? ->
             startActivity(
@@ -64,5 +37,10 @@ class ProductActivity : AppCompatActivity() {
                 )
             )
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        adapter?.startListening()
     }
 }

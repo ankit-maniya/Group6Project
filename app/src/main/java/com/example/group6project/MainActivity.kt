@@ -24,11 +24,11 @@ class MainActivity : AppCompatActivity() {
         topAnimation = AnimationUtils.loadAnimation(this, R.anim.animation_top)
         bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.animation_bottom)
         val btnViewProducts = findViewById<Button>(R.id.btnViewButton)
-        btnViewProducts.setOnClickListener { v: View? ->
+        btnViewProducts.setOnClickListener {
             startActivity(
                 Intent(
                     this,
-                    LogInActivity::class.java
+                    ProductActivity::class.java
                 )
             )
         }

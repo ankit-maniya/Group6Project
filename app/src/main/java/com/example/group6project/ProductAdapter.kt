@@ -2,14 +2,16 @@ package com.example.group6project
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
-class ProductAdapter(private val pizzaList: List<Pizza>, private val context: Context) :
+class ProductAdapter(private val pizzaList: List<PizzaData>, private val context: Context) :
     RecyclerView.Adapter<ProductAdapter.ProductViewHolder?>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -19,20 +21,26 @@ class ProductAdapter(private val pizzaList: List<Pizza>, private val context: Co
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val Pizza = pizzaList[position]
-        holder.title.text = Pizza.title
-        holder.sellerName.text = Pizza.sellerName
-        holder.productImage.setImageResource(Pizza.imageSrc)
-        holder.price.text = Pizza.price
-        holder.description.text = Pizza.description
+        holder.title.text = Pizza.pName
+        holder.sellerName.text = "Spiffy"
+
+        val imageUri = Uri.parse(Pizza.pImg)
+        Glide.with(context)
+            .load(imageUri)
+            .into(holder.productImage)
+
+        val pPriceString = Pizza.pPrice.toString()
+        holder.pPrice.text = pPriceString
+        holder.description.text = Pizza.pDesc
 
         // Implement the click listener for opening the DetailActivity
-        holder.itemView.setOnClickListener { v: View? ->
+        holder.itemView.setOnClickListener {
             val intent = Intent(context, ProductDetailActivity::class.java)
-            intent.putExtra("title", Pizza.title)
-            intent.putExtra("sellerName", Pizza.sellerName)
-            intent.putExtra("productImage", Pizza.imageSrc)
-            intent.putExtra("price", Pizza.price)
-            intent.putExtra("description", Pizza.description)
+            intent.putExtra("title", Pizza.pName)
+            intent.putExtra("sellerName", "Spiffy")
+            intent.putExtra("productImage", Pizza.pImg)
+            intent.putExtra("pPrice", pPriceString)
+            intent.putExtra("description", Pizza.pDesc)
             context.startActivity(intent)
         }
     }
@@ -45,14 +53,14 @@ class ProductAdapter(private val pizzaList: List<Pizza>, private val context: Co
          val title: TextView
          val sellerName: TextView
          val productImage: ImageView
-         val price: TextView
+         val pPrice: TextView
          val description: TextView
 
         init {
             title = itemView.findViewById(R.id.name)
             sellerName = itemView.findViewById(R.id.sellerName)
             productImage = itemView.findViewById(R.id.productImage)
-            price = itemView.findViewById(R.id.price)
+            pPrice = itemView.findViewById(R.id.pPrice)
             description = itemView.findViewById(R.id.description)
         }
     }

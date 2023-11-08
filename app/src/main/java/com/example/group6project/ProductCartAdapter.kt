@@ -31,11 +31,10 @@ class ProductCartAdapter(cartItems: List<ProductCart>?) : RecyclerView.Adapter<P
         return cartItems!!.size
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     fun updateItemCount(productId: String, newCount: Int, type: String?) {
         for (CartProduct in cartItems!!) {
             if (CartProduct.itemName == productId) {
-                val amount = CartProduct.itemPrice.substring(1).toDouble()
+                val amount = CartProduct.itemPrice.toDouble()
                 if (newCount == 0) {
                     if (al.contains(productId)) {
                         al.remove(productId)
@@ -83,11 +82,11 @@ class ProductCartAdapter(cartItems: List<ProductCart>?) : RecyclerView.Adapter<P
             if (!al.contains(CartProduct.itemName)) {
                 al.add(CartProduct.itemName)
             }
-            increaseButton.setOnClickListener { v: View? ->
+            increaseButton.setOnClickListener {
                 val newCount = CartProduct.quantity + 1
                 updateItemCount(CartProduct.itemName, newCount, "inc")
             }
-            decreaseButton.setOnClickListener { v: View? ->
+            decreaseButton.setOnClickListener {
                 if (CartProduct.quantity > 0) {
                     val newCount = CartProduct.quantity - 1
                     updateItemCount(CartProduct.itemName, newCount, "deduct")
